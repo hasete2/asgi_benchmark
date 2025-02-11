@@ -1,6 +1,6 @@
 FROM debian:bookworm
 
-RUN apt-get update && apt-get install -y vim 
+RUN apt update && apt upgrade -y && apt install -y siege && apt-get install -y vim 
 
 
 
