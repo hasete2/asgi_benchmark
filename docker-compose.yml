@@ -1,0 +1,19 @@
+services:
+  app:
+    build:
+      dockerfile: "./app/Dockerfile"
+    init: true
+    tty: true
+    volumes:
+      - ./app:/opt/app
+    ports:
+      - "8000:8000"
+    container_name: app
+  siege:
+    build:
+      dockerfile: "./siege/Dockerfile"
+    init: true
+    tty: true
+    volumes:
+      - ./siege:/opt/siege
+    container_name: siege
